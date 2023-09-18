@@ -284,6 +284,31 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
+.team-social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding-top: 8px;
+}
+.team-social-links .team-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--IRIS, #4d5ae5);
+}
+.team-social-links .team-link:hover {
+  background-color: var(--OCEAN, #404bbf);
+}
+.team-link .team-icon {
+  fill: #fff;
+}
+.team-social-links .team-link:hover {
+  fill: var(--OCEAN, #404bbf);
+}
 /* End Our team section */
 
 /* Start Our Portfolio section */
