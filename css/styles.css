@@ -130,10 +130,10 @@ img {
   position: absolute;
   left: 0;
   bottom: -1px;
-  width: 48px;
+  width: 100%;
   height: 4px;
   border-radius: 2px;
-  background: var(--OCEAN, #404bbf);
+  background-color: var(--OCEAN, #404bbf);
   content: '';
 }
 
