@@ -48,6 +48,8 @@ img {
 
 /*Start Header */
 .header {
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   border-bottom: 1px solid var(--cornflower, #e7e9fc);
 }
 .header-inner {
@@ -97,6 +99,8 @@ img {
   position: relative;
 }
 .header-nav-link {
+  position: relative;
+  color: #404bbf;
   display: inline-block;
   padding: 24px 0;
   color: var(--SLATE, #434455);
@@ -111,6 +115,9 @@ img {
 }
 .header-nav-link::before,
 .header-nav-link::after {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
   width: 48px;
   height: 4px;
   border-radius: 2px;
@@ -124,10 +131,12 @@ img {
   font-family: inherit;
 }
 .header-address {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   font-style: normal;
   display: flex;
 }
 .header-link-address {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   font-style: normal;
   font-family: inherit;
   color: var(--slate, #434455);
@@ -310,7 +319,7 @@ img {
   gap: 24px;
   padding-top: 8px;
 }
-.team-social-links .team-link {
+.team-social-links .team-social-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -319,17 +328,21 @@ img {
   border-radius: 50%;
   background-color: var(--IRIS, #4d5ae5);
 }
-.team-social-links .team-link:hover .team-social-links .team-link:focus {
+.team-social-links .team-social-link:hover .team-social-links .team-link:focus {
   background-color: var(--OCEAN, #404bbf);
 }
-.team-link {
+.team-social-link {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: #fff;
+}
+.team-social-link:hover,
+.team-social-link:focus {
+  background-color: #404bbf;
 }
 .team-icon {
   fill: #f4f4fd;
 }
-.team-social-links .team-link:hover {
+.team-social-links .team-social-link:hover {
   fill: var(--OCEAN, #404bbf);
 }
 /* End Our team section */
@@ -381,10 +394,13 @@ img {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   overflow: auto;
 }
+
 .portfolio-section-item:hover .overlay {
+  transform: translateX(0);
+}
+.portfolio-section-item:hover {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  transform: translateX(0);
 }
 .portfolio-progect-card {
   padding: 32px 16px;
