@@ -48,9 +48,16 @@ img {
 
 /*Start Header */
 .header {
+  max-width: 1440px;
+  margin: 0 auto;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   border-bottom: 1px solid var(--cornflower, #e7e9fc);
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
 }
 .header-inner {
   display: flex;
@@ -95,7 +102,7 @@ img {
 .header-logo-accent:focus {
   color: var(--ocean, #404bbf);
 }
-.header-nav-menu {
+.header-nav-menu .active {
   position: relative;
 }
 .header-nav-li {
@@ -113,12 +120,13 @@ img {
   letter-spacing: 0.02em;
 }
 
-.header-nav-link:hover::after,
-.header-nav-link:hover::before {
-  background: var(--OCEAN, #404bbf);
+.header-nav-link:hover,
+.header-nav-link:hover,
+.header-nav-menu .active {
+  color: var(--OCEAN, #404bbf);
 }
-.header-nav-link::before,
-.header-nav-link::after {
+
+.header-nav-link .active::after {
   position: absolute;
   left: 0;
   bottom: -1px;
