@@ -93,6 +93,9 @@ img {
 .header-logo-accent:focus {
   color: var(--ocean, #404bbf);
 }
+.header-nav-menu {
+  position: relative;
+}
 .header-nav-link {
   display: inline-block;
   padding: 24px 0;
@@ -101,9 +104,20 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
+.header-nav-menu .active::after {
+  position: absolute;
+  display: block;
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  bottom: -1px;
+  background-color: var(--color-ocean);
+  content: '';
+}
 
-.header-link:hover,
-.header-link:focus {
+.header-nav-link:hover,
+.header-nav-link:focus,
+.header-nav-link:active {
   color: var(--ocean, #404bbf);
   font-family: inherit;
 }
@@ -333,7 +347,33 @@ img {
   row-gap: 48px;
 }
 .portfolio-section-item {
-  flex-basis: calc((100% - 48px) / 3);
+  width: calc((100% - 48px) / 3);
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-show {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  padding: 40px 32px;
+  background: var(--IRIS, #4d5ae5);
+  color: var(--color-cloud);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: auto;
+}
+.portfolio-section-item:hover .overlay {
+  transform: translateX(0);
 }
 .portfolio-progect-card {
   padding: 32px 16px;
@@ -361,6 +401,9 @@ img {
   padding: 100px 0 100px;
   background: var(--navyblue, #2e2f42);
 }
+.footer-logo {
+  margin-right: 120px;
+}
 
 .footer-logo-link {
   display: inline-block;
@@ -381,4 +424,35 @@ img {
   color: var(--cloud, #f4f4fd);
   line-height: 1.5;
   letter-spacing: 0.02em;
+}
+.footer-social-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+.footer-social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.footer-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-iris);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-social-links .footer-icon {
+  fill: var(--color-cloud);
 }
