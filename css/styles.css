@@ -319,8 +319,8 @@ img {
   letter-spacing: 0.02em;
 }
 .team-text-card {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   text-align: center;
   color: var(--slate, #434455);
   line-height: 1.5;
